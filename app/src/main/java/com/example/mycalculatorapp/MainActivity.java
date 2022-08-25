@@ -2,6 +2,7 @@ package com.example.mycalculatorapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -19,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         EditText number2ET = findViewById(R.id.numb2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        int num1 = Integer.parseInt(number1ET.getText().toString());
-        int num2 = Integer.parseInt(number2ET.getText().toString());
-        int sum = num1 + num2;
+        double num1 = Double.parseDouble(number1ET.getText().toString());
+        double num2 = Double.parseDouble(number2ET.getText().toString());
+        double sum = num1 + num2;
 
         numberSumTV.setText("" + sum);
     }
@@ -30,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         EditText number2ET = findViewById(R.id.numb2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        int num1 = Integer.parseInt(number1ET.getText().toString());
-        int num2 = Integer.parseInt(number2ET.getText().toString());
-        int sum = num1 - num2;
+        double num1 = Double.parseDouble(number1ET.getText().toString());
+        double num2 = Double.parseDouble(number2ET.getText().toString());
+        double sum = num1 - num2;
 
         numberSumTV.setText("" + sum);
     }
@@ -41,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         EditText number2ET = findViewById(R.id.numb2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        int num1 = Integer.parseInt(number1ET.getText().toString());
-        int num2 = Integer.parseInt(number2ET.getText().toString());
-        int sum = num1 * num2;
+        double num1 = Double.parseDouble(number1ET.getText().toString());
+        double num2 = Double.parseDouble(number2ET.getText().toString());
+        double sum = num1 * num2;
 
         numberSumTV.setText("" + sum);
     }
@@ -52,12 +53,17 @@ public class MainActivity extends AppCompatActivity {
         EditText number2ET = findViewById(R.id.numb2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        int num1 = Integer.parseInt(number1ET.getText().toString());
-        int num2 = Integer.parseInt(number2ET.getText().toString());
-        int sum = num1 / num2;
+        double num1 = Double.parseDouble(number1ET.getText().toString());
+        double num2 = Double.parseDouble(number2ET.getText().toString());
+        double sum = num1 / num2;
 
         numberSumTV.setText("" + sum);
     }
+    public void switchScreens(View view) {
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }
+
 
 
 }
